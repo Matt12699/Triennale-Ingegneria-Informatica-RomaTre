@@ -34,7 +34,7 @@ Fisica I/
 | [Sistemi Informativi su Web](Sistemi%20Informativi%20su%20Web) | Siw Book |
 | [Sistemi Operativi](Sistemi%20Operativi) | Appunti, Esame |
 
-> 🚧 **Work in progress**: il repository è in fase di caricamento e riorganizzazione. L'indice delle materie arriverà a breve.
+> 📌 Altro materiale (appunti scritti a mano ed esercizi) verrà aggiunto nel tempo.
 
 ### Nota sul contenuto
 
@@ -48,11 +48,11 @@ Non tutti gli esami del corso di laurea sono presenti. Se una materia (o parte d
 
 - **Elettrotecnica ed Elettronica**: appunti completi di Giacomo Sturm, con sorgenti LaTeX e figure, disponibili nel suo repository: [00Darxk/Elettrotecnica-ed-Elettronica](https://github.com/00Darxk/Elettrotecnica-ed-Elettronica)
 
-## Diritti d'autore e materiale di terzi
+## Licenza, diritti d'autore e materiale di terzi
 
-Gli appunti, gli esercizi svolti e i progetti realizzati da me sono condivisi liberamente per scopi di studio.
+Gli appunti, gli esercizi svolti e i progetti realizzati da me sono distribuiti con licenza [**Creative Commons BY-NC-SA 4.0**](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.it) (testo completo nel file [LICENSE](LICENSE)): puoi condividerli e modificarli liberamente, a patto di **citare la fonte**, **non usarli a scopo commerciale** e **ridistribuire eventuali versioni modificate con la stessa licenza**.
 
-**Tutto il materiale che non è mio** (ad esempio slide, dispense, testi d'esame ed esercitazioni fornite dai docenti, o materiale di altri studenti) **resta di proprietà dei rispettivi autori**, che ne detengono tutti i diritti. È incluso qui solo a scopo didattico e senza fini di lucro.
+**Tutto il materiale che non è mio** (ad esempio slide, dispense, testi d'esame ed esercitazioni fornite dai docenti, o materiale di altri studenti) **resta di proprietà dei rispettivi autori**, che ne detengono tutti i diritti, e **non è coperto dalla licenza sopra**. È incluso qui solo a scopo didattico e senza fini di lucro.
 
 Se sei l'autore di uno di questi contenuti e preferisci che venga rimosso o che venga indicata una diversa attribuzione, apri una [issue](../../issues) o contattami: provvederò il prima possibile.
 
