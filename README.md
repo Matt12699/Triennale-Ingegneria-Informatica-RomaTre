@@ -33,16 +33,21 @@ Fisica I/
 
 | Materia | Contenuto |
 |---|---|
+| [Algoritmi e Strutture Dati](Algoritmi%20e%20Strutture%20Dati) | Appunti scritti a mano |
+| [Analisi dei Sistemi ad Eventi](Analisi%20dei%20Sistemi%20ad%20Eventi) | Appunti scritti a mano |
 | [Analisi e Progettazione del Software](Analisi%20e%20Progettazione%20del%20Software) | Appunti e Teoria (LaTeX), contratti delle operazioni di homework ed esoneri |
 | [Basi di Dati](Basi%20di%20Dati) | Cardinalità (LaTeX), prova parziale 2023/24, esercitazione SQL con soluzioni |
+| [Calcolatori Elettronici](Calcolatori%20Elettronici) | Slide annotate ed esercizi, primo e secondo esonero |
 | [Economia Applicata all'Ingegneria](Economia%20Applicata%20all'Ingegneria) | Appunti e Domande (LaTeX), appunti delle lezioni |
 | [Elettrotecnica ed Elettronica](Elettrotecnica%20ed%20Elettronica) | Esame (LaTeX) |
 | [Fisica I](Fisica%20I) | Appunti, Ripetizioni, Ripetizioni Parte 2 (LaTeX), esami passati ed esercizi svolti a mano |
-| [Fondamenti d'Automatica](Fondamenti%20d'Automatica) | Parte integrativa di teoria |
+| [Fondamenti d'Automatica](Fondamenti%20d'Automatica) | Appunti, ripasso, teoria, Matlab, parte integrativa di teoria, appunti di teoria di Martina Sasso |
+| [Fondamenti di Telecomunicazioni](Fondamenti%20di%20Telecomunicazioni) | Appunti scritti a mano (divisi in 3 parti per le dimensioni) e teoria |
 | [Intelligenza Artificiale e Machine Learning](Intelligenza%20Artificiale%20e%20Machine%20Learning) | Appunti ed esoneri (LaTeX), notebook Python (strutture dati, ricerca greedy/A*, hill climbing, simulated annealing) |
 | [Programmazione Funzionale](Programmazione%20Funzionale) | Orale (LaTeX), esercitazioni ed esoneri in OCaml con soluzioni |
+| [Programmazione Orientata agli Oggetti](Programmazione%20Orientata%20agli%20Oggetti) | Slide del corso |
 | [Reti di Calcolatori](Reti%20di%20Calcolatori) | Appunti, Esame, Katharà (LaTeX), appunti delle lezioni, laboratori Katharà |
-| [Ricerca Operativa I](Ricerca%20Operativa%20I) | Esami ed esoneri svolti |
+| [Ricerca Operativa I](Ricerca%20Operativa%20I) | Slide annotate, esami ed esoneri svolti, preparazione all'esame scritta a mano |
 | [Sistemi Informativi su Web](Sistemi%20Informativi%20su%20Web) | Siw Book (LaTeX), slide del corso, esercizi HTML/CSS e Spring Boot |
 | [Sistemi Operativi](Sistemi%20Operativi) | Appunti ed Esame (LaTeX), appunti delle lezioni, esercizi in C (processi, thread, produttore/consumatore, allocazione della memoria) |
 > 📌 Altro materiale (appunti scritti a mano ed esercizi) verrà aggiunto nel tempo.
@@ -72,6 +77,9 @@ Gli appunti, gli esercizi svolti e i progetti realizzati da me sono distribuiti 
 **Tutto il materiale che non è mio** (ad esempio slide, dispense, testi d'esame ed esercitazioni fornite dai docenti, o materiale di altri studenti) **resta di proprietà dei rispettivi autori**, che ne detengono tutti i diritti, e **non è coperto dalla licenza sopra**. È incluso qui solo a scopo didattico e senza fini di lucro.
 
 Durante gli anni di studio ho raccolto anche appunti ed esercizi svolti da altri studenti e tutor, passati di mano in mano tra gruppi e colleghi (ad esempio parte degli esercizi svolti e dei tutoraggi di Fisica I e alcune soluzioni di Programmazione Funzionale). Di molti di questi **non conosco gli autori**: il merito è loro, e se riconosci un tuo lavoro puoi chiedermi di aggiungere il tuo nome o di rimuoverlo.
+
+Un ringraziamento in particolare a:
+- **Martina Sasso**, per gli appunti di teoria di Fondamenti d'Automatica
 
 Se sei l'autore di uno di questi contenuti e preferisci che venga rimosso o che venga indicata una diversa attribuzione, apri una [issue](../../issues) o contattami: provvederò il prima possibile.
 
