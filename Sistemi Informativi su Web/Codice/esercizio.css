@@ -1,0 +1,41 @@
+body {
+    margin: 0;
+  }
+  
+  #flex-container {
+    display: flex;
+    justify-content: space-between;
+    height: 200px;
+  }
+  
+  nav {
+    background-color: royalblue;
+    height: 75px;
+  }
+  
+  header {
+    background-color: lightskyblue;
+    height: 400px;
+  }
+  section {
+    background-color: gray;
+    margin: 75px 100px;
+  }
+  
+  footer {
+    background-color: black;
+    height: 100px;
+  }
+  
+  p {
+    background-color: khaki;
+    height: 200px;
+    margin-bottom: 75px;
+  }
+  
+  div.col {
+    background-color: darkkhaki;
+    border: 20px solid black;
+    width: calc(50% - 10px);
+  }
+    

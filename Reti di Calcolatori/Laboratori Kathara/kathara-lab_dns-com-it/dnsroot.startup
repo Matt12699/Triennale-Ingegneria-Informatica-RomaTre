@@ -1,0 +1,6 @@
+ip address add 3.0.0.31/24 dev eth0
+
+# a default router is selected
+ip route add default via 3.0.0.1
+
+systemctl start bind9

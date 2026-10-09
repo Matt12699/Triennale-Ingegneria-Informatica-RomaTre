@@ -1,0 +1,12 @@
+$TTL 60000
+@               IN      SOA     dnsmoney.money.com.    root.dnsmoney.money.com. (
+                        2006031201 ; serial
+                        28 ; refresh
+                        14400 ; retry
+                        3600000 ; expire
+                        15 ; negative cache ttl
+                        )
+@                          IN      	NS      	dnsmoney.money.com.
+dnsmoney.money.com.      IN      	A       	2.0.0.21
+make.money.com.		   IN		A		2.0.0.20
+localmoney.money.com.	   IN		A		2.0.0.22

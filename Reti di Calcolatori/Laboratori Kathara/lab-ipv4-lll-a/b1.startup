@@ -1,0 +1,11 @@
+ip link set dev eth0 address 00:00:00:00:b1:00
+ip link set dev eth1 address 00:00:00:00:b1:01
+
+ip link add name mainbridge type bridge 
+
+ip link set dev eth0 master mainbridge
+ip link set dev eth1 master mainbridge
+
+ip link set up dev mainbridge
+
+brctl setageing mainbridge 600

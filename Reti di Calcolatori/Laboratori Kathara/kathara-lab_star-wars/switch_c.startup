@@ -1,0 +1,12 @@
+ip link set dev eth0 address 00:00:00:00:01:09
+ip link set dev eth1 address 00:00:00:00:01:00
+
+ip link add name firstbridge type bridge
+
+ip link set dev eth0 master firstbridge
+
+ip link set dev eth1 master firstbridge
+
+ip link set up dev firstbridge
+
+brctl setageing firstbridge 600

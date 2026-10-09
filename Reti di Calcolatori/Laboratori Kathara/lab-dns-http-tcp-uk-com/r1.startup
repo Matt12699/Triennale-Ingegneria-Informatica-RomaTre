@@ -1,0 +1,10 @@
+ip link set dev eth0 address 00:00:00:00:00:a1 mtu 1000
+ip link set dev eth1 address 00:00:00:00:00:c1
+ip link set dev eth2 address 00:00:00:00:00:d1
+
+
+ip address add 1.2.3.1/24 dev eth0
+ip address add 1.1.1.1/24 dev eth1
+ip address add 3.3.3.1/24 dev eth2
+
+ip route add 2.2.2.0/24 via 1.2.3.2 dev eth0

@@ -1,0 +1,36 @@
+# to eth0 a MAC address is assigned
+# different from the default one
+ip link set dev eth0 address 00:00:00:00:00:a1
+
+# to eth1 a MAC address is assigned
+# different from the default one
+ip link set dev eth1 address 00:00:00:00:00:b1
+
+# to eth2 a MAC address is assigned
+# different from the default one
+ip link set dev eth2 address 00:00:00:00:00:c1
+
+# the eth0, eth1, and eth2 interfaces are set down and then up 
+# to force the stateless auto-configuration
+# to rely on the new MAC addresses
+ip link set dev eth0 down
+ip link set dev eth0 up
+ip link set dev eth1 down
+ip link set dev eth1 up
+ip link set dev eth2 down
+ip link set dev eth2 up
+
+# set a static ip address on eth0
+ip address add 2001:1:1:1::1/64 dev eth0
+
+# set a static ip address on eth1
+ip address add 2001:2:2:2::1/64 dev eth1
+
+# set a static ip address on eth2
+ip address add 2001:3:3:3::1/64 dev eth2
+
+# set correct privileges for radvd.conf
+chmod o-rw /etc/radvd.conf
+
+# start the radvd service
+systemctl start radvd

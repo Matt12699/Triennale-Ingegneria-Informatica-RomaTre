@@ -1,0 +1,8 @@
+ip link set dev eth0 address 00:00:00:00:00:a2
+ip link set dev eth1 address 00:00:00:00:00:f1
+
+ip address add 1.2.3.2/24 dev eth0
+ip address add 2.2.2.1/24 dev eth1
+
+ip route add 1.1.1.0/24 via 1.2.3.1 dev eth0
+ip route add 3.3.3.0/24 via 1.2.3.1 dev eth0

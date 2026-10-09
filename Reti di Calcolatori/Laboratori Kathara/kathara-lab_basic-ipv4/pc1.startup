@@ -1,0 +1,5 @@
+# to eth0 an IPv4 address is assigned
+ip address add 195.11.14.5/24 dev eth0
+
+# a default router is selected
+ip route add default via 195.11.14.1

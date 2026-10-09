@@ -1,0 +1,12 @@
+$TTL   60000
+@               IN      SOA     nsuk.uk.    root.nsuk.uk. (
+                        2006031201 ; serial
+                        28800 ; refresh
+                        14400 ; retry
+                        3600000 ; expire
+                        0 ; negative cache ttl
+                        )
+@               IN      NS     nsuk.uk.
+nsuk.uk.        IN      A       2.2.2.2
+
+rrrr.uk.         IN      A       2.2.2.3

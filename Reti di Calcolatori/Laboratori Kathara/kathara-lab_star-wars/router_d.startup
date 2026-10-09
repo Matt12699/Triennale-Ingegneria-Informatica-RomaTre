@@ -1,0 +1,11 @@
+ip link set dev eth0 address 00:00:00:00:02:01
+ip address add 50.50.50.1/25 dev eth0
+
+ip link set dev eth1 address 00:00:00:00:01:0D
+ip address add 50.50.50.250/25 dev eth1
+
+ip link set dev eth2 address 00:00:00:00:0A:01
+ip address add 10.10.10.1/30 dev eth2
+
+ip route add 100.100.100.0/24 via 50.50.50.131
+ip route add default via 10.10.10.2

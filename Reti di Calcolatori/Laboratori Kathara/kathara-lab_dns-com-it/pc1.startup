@@ -1,0 +1,4 @@
+ip address add 1.0.0.10/24 dev eth0
+
+# a default router is selected
+ip route add default via 1.0.0.1
