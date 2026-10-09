@@ -1,0 +1,77 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[margin=2cm, top=3cm]{geometry} % margine superiore ridotto a 1 cm
+\usepackage{listings} % Libreria per Python
+\title{Intelligenza Artificiale e Machine Learning}
+\date{Ottobre 2024}
+\begin{document}
+
+\maketitle
+
+\section{Introduzione al linguaggio Python}
+\subsection{Le basi}
+print() per stampare\\
+           type() per conoscere il tipo dell'argomento\\
+           Non serve specificare il tipo della variabile\\
+           Per avere solo la parte intera della divisione //\\
+           Per inserire dati da input basta chiamare la funzione input()\\
+           In python esiste una modalità interattiva, siamo in modalità interattiva se prima ci sono . . .\\
+           E possibile gestire le eccezioni in questo modo:
+           \begin{lstlisting}[language=Python, frame=single, numbers=left, caption=Esempio di eccezioni in codice Python]
+try:
+prompt= 'Dammi un dato!'
+dato=input(prompt)
+print(dato)
+int(dato) per effettuare una conversione
+except:
+print('Please enter a number')
+\end{lstlisting}
+
+\subsection{Le condizioni}
+Gli if hanno questa sintassi:
+\begin{lstlisting}[language=Python, frame=single, numbers=left, caption=Esempio di condizioni in codice Python]
+     if x>0: 
+          print('x e' positivo')
+          else:
+          print('x e' negativo')
+\end{lstlisting}
+\subsection{Funzioni e funzioni built-in}
+Esistono funzioni built-in come max() e min()\\
+Esiste il modulo math 'import math' per eseguire la maggior parte delle funzioni matematiche es. math.sin(x), le funzioni trigonometriche accettano un argomento in radianti\\
+Quindi per convertire gradi/360 * 2pi\\
+Il modulo random permette di avere funzioni che generano numeri pseudo-casuali\\
+è possibile definire funzioni con def funzione(): istruzioni\\
+Non si possono creare variabili con lo stesso nome di una funzione dato che in python la funzione è un oggetto funzione\\
+Se si tenta di assegnare a una variabile il valore di una fruitful function si otterrà un valore speciale chiamato "None"\\
+\subsection{I cicli}
+Qui non si usano parentesi graffe, infatti per capire il blocco di un istruzione condizionale, una funzione o un ciclo si identa semplicemente\\
+ Nel codice, quando sono finite le istruzioni si toglie l'identamento\\
+ Si può fermare il ciclo quando si vuole con l'istruzione break\\
+ Contrariamente si può usare l'istruzione continue per saltare alla successiva iterazione senza terminare il corpo del ciclo per l'iterazione corrente\\
+ Esiste il for each:\\
+ \begin{lstlisting}[language=Python, frame=single, numbers=left, caption=Esempio di for-each in codice Python]
+lista = [1, 2, 3]
+for numero in lista:
+    print(numero)
+print('Done')
+\end{lstlisting}
+Per trovare il valore più grande in una lista:
+ \begin{lstlisting}[language=Python, frame=single, numbers=left, caption=Esempio di for-each in codice Python]
+largest = None
+for itervar in [3, 41, 12, 9, 74, 15]
+if largest is None or itervar >largest:
+    largest = itervar
+print(largest)
+\end{lstlisting}
+Ovviamente il codice per il più piccolo è pressochè identico
+\subsection{Le stringhe}
+Funzione len per la lunghezza di una stringa\\
+è possibile ottenere delle sottostringhe tramite i :
+ \begin{lstlisting}[language=Python, frame=single, numbers=left, caption=Esempio di operatore slice in codice Python]
+s = 'Monty Python'
+print(s[0:5]) # nota: l'ultimo numero (in questo caso 5) e' escluso
+>>Monty 
+\end{lstlisting}
+\noindent
+Se si omette il primo indice, la sottostringa parte dall'inizio della stringa, se si omette il secondo indice, la sottostringa arriva alla fine della stringa
+\end{document}

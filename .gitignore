@@ -1,0 +1,34 @@
+# File di compilazione LaTeX
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.synctex(busy)
+*.bbl
+*.blg
+*.bcf
+*.run.xml
+*.nav
+*.snm
+*.vrb
+*.xdv
+*.dvi
+
+# PDF generati dentro le cartelle dei sorgenti (i PDF finali stanno nella cartella della materia)
+**/LaTeX/**/main.pdf
+
+# File di sistema ed editor
+Thumbs.db
+desktop.ini
+.DS_Store
+.vscode/
+*.swp
+*~
+
+# Materiale ancora da smistare (non va pubblicato)
+_da_smistare/

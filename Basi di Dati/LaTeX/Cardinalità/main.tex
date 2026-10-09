@@ -1,0 +1,63 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[margin=2cm, top=1cm]{geometry} % margine superiore ridotto a 1 cm
+\usepackage{amssymb}
+\usepackage{amsmath}
+\newcommand{\join}{\mathbin{\bowtie}} % Definiamo il simbolo di join con spaziatura adeguata
+\title{Cardinalità Basi di Dati}
+\author{Mattia Cosimi}
+\date{October 2024}
+
+\begin{document}
+
+\maketitle
+
+\section{Regole per l'esercizio sulla cardinalità}
+Date le seguenti relazioni:\\\\
+\noindent
+$R_1(\underline{A},B)$, con vincolo di integrità referenziale fra B e la chiave D di $R_2$\\
+$R_2(\underline{D},E,F,G)$, con vincolo di integrità referenziale fra F,G e la chiave H,P di $R_3$\\
+$R_3(\underline{H},\underline{P},Q)$
+
+\subsection{Proiezione}
+\paragraph{Proiezione sulla chiave}
+Se la proiezione viene effettuata sulla chiave intera allora il minimo è uguale al massimo e corrisponde alla cardinalità della relazione.
+
+$$\pi_{HP}(R_3)$$
+$$Min=Max=N_3$$
+\paragraph{Proiezione su parte di chiave o attributi}
+Diversamente se la proiezione viene fatta su parte della chiave o su un attributo non chiave il minimo è 1, dato che gli attributi potrebbero essere tutti ripetuti e il massimo è la cardinalità della relazione stessa.
+$$\pi_{Q}(R_3)$$
+$$Min=1\,\,Max=N_3$$
+\subsection{Join}
+\paragraph{Join con vincolo di integrità referenziale}
+Se la join viene effettuata tra due relazioni le quali hanno un vincolo di integrità referenziale allora la cardinalità minima sarà la cardinalità della relazione avente l'attributo chiave.
+\[
+R_1\join_{(B = D)} R_2
+\]
+$$Min=N_1\,\,Max=N_1$$
+\paragraph{Join tra attributi}
+Se la join viene effettuata su attributi non correlati il minimo è 0 e il massimo è il prodotto cartesiano tra le relazioni.
+\[
+R_1\join_{(B = F)} R_2
+\]
+$$Min=0\,\,Max=N_1 \times N_2$$
+\paragraph{Join tra attributo e parte di chiave}
+Se la join viene effettuata su un attributo e una parte della chiave valgono le regole della join tra attributi.
+\[
+R_1\join_{(B = H)} R_3
+\]
+$$Min=0\,\,Max=N_1 \times N_3$$
+\paragraph{Join tra attributo e chiave}
+Se la join viene effettuata su un attributo e una chiave primaria, il minimo sarà 0 e il massimo sarà la cardinalità della relazione che non ha la chiave.
+\[
+R_3\join_{(Q = A)} R_1
+\]
+$$Min=0\,\,Max=N_3$$
+\paragraph{Join con integrità referenziale non sull'intera chiave}
+Se la join viene effettuata con un attributo che ha integrità referenziale con una chiave primaria composta, la cardinalità minima è la cardinalità della relazione che non ha la chiave mentre la cardinalità massima è il prodotto cartesiano tra le due.
+\[
+R_2\join_{(F = H)} R_3
+\]
+$$Min=N_2\,\,Max=N_2 \times N_3$$
+\end{document}

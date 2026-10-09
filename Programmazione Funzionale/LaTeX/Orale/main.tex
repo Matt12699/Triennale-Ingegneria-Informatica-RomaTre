@@ -1,0 +1,108 @@
+\documentclass{article}
+
+\usepackage{cancel}
+\usepackage{amsmath}
+\usepackage[includehead,nomarginpar]{geometry}
+\usepackage[export]{adjustbox}
+\usepackage{amsfonts} 
+\usepackage{verbatim}
+\usepackage{mathrsfs}  
+\usepackage{lmodern}
+\usepackage{braket}
+\usepackage{bookmark}
+\usepackage[italian]{babel}
+\usepackage{fancyhdr}
+\usepackage{romanbarpagenumber}
+\usepackage{caption}
+\usepackage{subfig}
+\usepackage{float}
+\usepackage[export]{adjustbox}
+\usepackage{bm}
+\allowdisplaybreaks
+
+\setlength{\headheight}{12.0pt}
+\addtolength{\topmargin}{-12.0pt}
+\graphicspath{ {./Immagini/} }
+
+
+
+%% segnati con un doppio segno percentuale ("%%") le correzioni o inserimenti da apportare al testo  
+
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+}
+
+\renewcommand{\contentsname}{Indice}
+\AtBeginDocument{%
+  \renewcommand{\figurename}{Fig.}
+}
+\newcommand{\vect}[1]{\boldsymbol{\mathbf{#1}}}
+\newcommand{\df}{\mathrm{d}}
+\newcommand{\Frac}[2]{\displaystyle\frac{\strut{#1}}{\strut{#2}}}
+\newcommand{\tageq}{\tag{\stepcounter{equation}\theequation}}
+\newcommand{\SI}[1]{\mathrm{#1}}
+
+
+\newsavebox{\tempbox} %{\raisebox{\dimexpr.5\ht\tempbox-.5\height\relax}}
+
+
+\numberwithin{equation}{subsection}
+
+\begin{document}
+
+\title{%
+    \textbf{Programmazione Funzionale}  \\ 
+    \large Appunti per l'orale di Programmazione Funzionale\\
+    \textit{Anno Accademico: 2024/25}}
+\author{\textit{Mattia Cosimi}}
+\date{\textit{Dipartimento di Ingegneria Civile, Informatica e delle Tecnologie Aeronautiche \\
+Università degli Studi ``Roma Tre"}}
+
+\maketitle
+
+
+\clearpage
+
+\pagestyle{fancy}
+\fancyhead{}\fancyfoot{}
+\fancyhead[C]{\textit{Programmazione Funzionale - Università degli Studi ``Roma Tre"}}
+\fancyfoot[C]{\thepage}
+
+\pagenumbering{Roman}
+\tableofcontents
+
+\clearpage
+
+\pagenumbering{arabic}
+
+\section{Nozioni iniziali}
+Durante la \textbf{modalità interattiva} il compilatore legge (read) un'espressione o una dichiarazione, calcola il valore dell'espressione (eval) e ne deduce il tipo, infine stampa il valore dell'espressione (print). Ocaml è un linguaggio a \textbf{tipizzazione statica} ovvero ogni espressione ha un tipo che può essere determinato a tempo di compilazione. Le \textbf{espressioni} hanno sempre un valore e un tipo. Il calcolo procede \textbf{valutando espressioni} che significa semplificarla fino ad ottenere un'espressione non più semplificabile ovvero un valore. Ocaml ha un \textbf{ambiente di valutazione} che è una collezione di legami variabile-valore. L'ambiente viene gestito come una \textbf{pila}, i nuovi legami vengono aggiunti in alto e si cerca il valore delle variabili a partire dall'alto. Quando viene dichiarata una funzione che utilizza delle variabili, il valore delle variabili verrà cercato nell \textbf{ambiente di dichiarazione} della funzione ovvero nell'ambiente in cui è stata definita (tutto ciò che la precede nella pila). Quando una funzione viene applicata a un argomento, il suo argomento viene valutato nell'ambiente e viene creato un nuovo legame \textbf{provvisorio} del parametro formale con il valore dell'argomento. Succcessivamente il legame provvisorio viene cancellato. In Ocaml è presente il polimorfismo in particolari ci sono le \textbf{variabili di tipo} ('a). Per quanto riguarda l'uso delle parentesi: nei tipi (\textbf{espressioni di tipo}) si associa a destra
+$$int\xrightarrow[]{}int\xrightarrow{}int=int\xrightarrow[]{}(int\xrightarrow[]{}int)$$
+Nelle \textbf{espressioni} si associa a sinistra
+$$(times\ 3) \ 5 = times \ 3 \ 5$$
+\subsection{Forma Currificata}
+Per avere una \textbf{forma currificata} basta far consumare alla funzione un'argomento alla volta (\textbf{$function\xrightarrow[]{}$}). In questo modo le funzioni possono essere applicate parzialmente:
+$$sum \ (times \ 5) \ 1 \ 10= \sum_{k=1}^{10} (5*k)
+$$
+In generale per currificare una funzione deve esser possibile omettere le parentesi in modo tale da consumare gli argomenti uno alla volta.
+\subsection{Tipi}
+Nel caso dei tipi booleani, Ocaml ha una valutazione "pigra", se la prima condizione dell (and) è vera allora valuta la seconda, se la prima condizione dell (or) è falsa allora valuta la seconda. Gli interi lavorano con le operazioni per gli interi ($+-*/$) i float con quelle per i float ($+. \ -. \ *. \ /.$). In Ocaml, non c'è la conversione automatica dei tipi numerici. Uguaglianza, disuguaglianza e operatori di confronto sono definiti su qualsiasi tipo, eccetto le funzioni e i tipi contenenti funzioni. Nell'if i rami devono avere lo stesso tipo. Ocaml applica la regola di calcolo \textbf{Call by value} la quale calcola il valore dell'argomento prima di applicare una funzione. Ogni tipo di dati è caratterizzato da un insieme di \textbf{costruttori} (costanti + operazioni che "costruiscono" valori di quel tipo) (esempio (,) parentesi e virgola costruiscono una coppia) e un insieme di \textbf{selettori} (fst, snd) (operazioni che "selezionano" componenti da un valore del tipo).
+\subsection{Ricorsione}
+La ricorsione è una tecnica per risolvere problemi complessi riducendoli a problemi più semplici dello stesso tipo. Per risolvere un problema ricorsivamente: \textbf{1.} identificare i casi base, \textbf{2.} identificare i problemi più semplici dello stesso tipo la cui soluzione può aiutare a risolvere il problema complesso, \textbf{3.} assumendo di saper risolvere i problemi più semplici, determinare come operare sulla soluzione dei problemi più semplici per ottenere la soluzione del problema complesso. Quando definiamo un let x= E in F ecc x è una \textbf{variabile locale} e come tale quando tutta l'espressione è stata valutata x non ha più un valore. Quando abbiamo una sequenza di espressioni il compilatore le valuta tutte ma i valori vengono ignorati tranne quello dell'ultima espressione. Le funzioni ricorsive possono essere \textbf{tail recursive} o \textbf{iterative}. In un processo \textbf{ricorsivo} i calcoli vengono eseguiti al ritorno della ricorsione, usa spazio proporzionale al numero di chiamate ricorsive. In un processo \textbf{iterativo} i calcoli vengono eseguiti tutti prima della chiamata ricorsiva e il risultato parziale viene conservato in un \textbf{accumulatore}.
+\section{Liste}
+I \textbf{costruttori} del tipo \textbf{'a list} sono: \textbf{[] e ::} mentre i \textbf{selettori} sono \textbf{List.hd (restituisce la testa della lista) e List.tl (restituisce la lista senza la testa)}. Le liste vengono utilizzate per rappresentare dati come i dizionari che sono una collezione di elementi (chiave, valore).
+Il \textbf{Backtracking} consiste nel costruire la sequenza aggiungendo un elemento alla volta e controllare passo passo se la sequenza parziale  ha possibilità di successo. Ad ogni stadio i: se $x_1,...,x_i$ ha possibilità di successo, si sceglie un elemento $x_{i+1}$, tra le diverse alternative; se, con tale scelta, si arriva a una soluzione sol quella è la soluzione. Altrimenti si sceglie un diverso $x_{i+1}$. Se non si trova una soluzione dopo aver esaminato tutte le possibilità: fallimento.
+\subsection{Definizione di nuovi tipi}
+Per definire un nuovo tipo occorre: un nome per il tipo e come costruire i valori del tipo, cioè quali sono i \textbf{costruttori} del tipo. Ovviamente i tipi possono essere definiti anche ricorsivamente. Un'altra cosa particolare è il tipo type 'a option= None ! Some of 'a utile quando non si vuole la propagazione degli errori.
+\section{Alberi}
+Un'albero è un insieme di oggetti, chiamati \textbf{nodi}, su cui è definita una relazione binaria G(n, m) che leggiamo con n è genitore di m. Esiste un unico nodo, chiamato \textbf{radice}, che non ha genitori. Ogni nodo diverso dalla radice ha un unico genitore. Per ogni nodo n diverso dalla radice esiste un \textbf{cammino} dalla radice a n (l'albero è connesso): esistono nodi $n_1,...,n_k$ ($k>=1$) tali che $n_1$ è la radice dell'albero, $n_k=n$ e, per ogni $i=1,...,k-1$, $n_i$ è genitore di $n_{i+1}$. Se n è il genitore di m, allora m è un \textbf{figlio} di n. Un \textbf{albero binario} è un albero in cui ogni nodo ha al massimo due figli. \textbf{Cammino}: sequenza di nodi $n_1, ..., n_k , n_{k+1}$ tale che, per i = 1, ..., k, $n_i$ è il genitore di $n_{i+1}$.\textbf{Lunghezza del cammino}: k (numero degli archi).\textbf{Antenato e discendente}: se esiste un cammino da n a m, allora n è un antenato di m e m un discendente di n. \textbf{Fratelli}: nodi che hanno lo stesso genitore. \textbf{Sottoalbero}: insieme costituito da un nodo n e tutti i suoi discendenti; n è la radice del sottoalbero. \textbf{Foglia}: nodo senza figli. \textbf{Nodo interno}: nodo con uno o più figli. \textbf{Profondità di un nodo}: lunghezza del cammino dalla radice al nodo
+\textbf{Altezza di un nodo}: lunghezza del cammino più lungo che va dal nodo a una foglia. \textbf{Altezza dell’albero}: altezza della sua radice = profondità massima di un nodo nell’albero. \textbf{Dimensione di un albero}: numero dei nodi.
+\subsection{Definizione degli alberi binari per induzione strutturale}
+Un nodo n è un albero binario (una foglia), con radice n. Se $T_0$ è un albero binario con radice $n_0$ e n è un nuovo nodo, allora la struttura che si ottiene aggiungendo n come genitore di $n_0$ è un albero binario con radice n. Se $T_0$ e $T_1$ sono alberi binari con radici $n_0$ e $n_1$, rispettivamente, e un n è un nuovo nodo, allora la struttura che si ottiene aggiungendo n come genitore di $n_0$ e di $n_1$ è un albero binario con radice n. Nient'altro è un albero binario.
+\subsection{Definizione degli alberi n-ari per induzione strutturale}
+L'albero costituito da un unico nodo r senza genitori è un albero, con radice r. Se $t_1,t_2,...,t_n$ sono alberi, con radici, rispettivamente $r_1,r_2,...,r_n$, e r è un nuovo nodo, allora la struttura che si ottiene aggiungendo il nodo r come genitore di $r_1,r_2,...,r_n$ è un albero. Nient'altro è un albero.
+
+\clearpage
+\end{document}

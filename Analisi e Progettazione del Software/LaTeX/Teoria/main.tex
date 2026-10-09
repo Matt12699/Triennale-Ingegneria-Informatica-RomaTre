@@ -1,0 +1,89 @@
+\documentclass{article}
+
+\usepackage{cancel}
+\usepackage{amsmath}
+\usepackage[includehead,nomarginpar]{geometry}
+\usepackage[export]{adjustbox}
+\usepackage{amsfonts} 
+\usepackage{verbatim}
+\usepackage{mathrsfs}  
+\usepackage{lmodern}
+\usepackage{braket}
+\usepackage{bookmark}
+\usepackage[italian]{babel}
+\usepackage{fancyhdr}
+\usepackage{romanbarpagenumber}
+\usepackage{caption}
+\usepackage{subfig}
+\usepackage{float}
+\usepackage[export]{adjustbox}
+\usepackage{bm}
+\allowdisplaybreaks
+
+\setlength{\headheight}{12.0pt}
+\addtolength{\topmargin}{-12.0pt}
+\graphicspath{ {./Immagini/} }
+
+
+
+%% segnati con un doppio segno percentuale ("%%") le correzioni o inserimenti da apportare al testo  
+
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+}
+
+\renewcommand{\contentsname}{Indice}
+\AtBeginDocument{%
+  \renewcommand{\figurename}{Fig.}
+}
+\newcommand{\vect}[1]{\boldsymbol{\mathbf{#1}}}
+\newcommand{\df}{\mathrm{d}}
+\newcommand{\Frac}[2]{\displaystyle\frac{\strut{#1}}{\strut{#2}}}
+\newcommand{\tageq}{\tag{\stepcounter{equation}\theequation}}
+\newcommand{\SI}[1]{\mathrm{#1}}
+
+
+\newsavebox{\tempbox} %{\raisebox{\dimexpr.5\ht\tempbox-.5\height\relax}}
+
+
+\numberwithin{equation}{subsection}
+
+\begin{document}
+
+\title{%
+    \textbf{Analisi e Progettazione del Software}  \\ 
+    \large Teoria di Analisi e Progettazione del Software\\
+    \textit{Anno Accademico: 2024/25}}
+\author{\textit{Mattia Cosimi}}
+\date{\textit{Dipartimento di Ingegneria Civile, Informatica e delle Tecnologie Aeronautiche \\
+Università degli Studi ``Roma Tre"}}
+
+\maketitle
+
+
+\clearpage
+
+\pagestyle{fancy}
+\fancyhead{}\fancyfoot{}
+\fancyhead[C]{\textit{Analisi e Progettazione del Software - Università degli Studi ``Roma Tre"}}
+\fancyfoot[C]{\thepage}
+
+\pagenumbering{Roman}
+\tableofcontents
+
+\clearpage
+
+\pagenumbering{arabic}
+
+\section{Introduzione all'analisi e progettazione orientata agli oggetti (capitolo 1)}
+Questo corso è un'introduzione all'analisi e alla progettazione orientata agli oggetti (OOA/D) basata sull'applicazione di : \textbf{UML} per la modellazione del software, \textbf{pattern} principi di analisi e progettazione, \textbf{un processo iterativo} come contesto per lo sviluppo del software. Lo sviluppo di software OO può essere sostenuto dalle seguenti attività: \textbf{analisi dei requisiti (non è OO)}, \textbf{analisi orientata agli oggetti (OOA)} e \textbf{progettazione orientata agli oggetti (OOD)}.\\\\
+La \textbf{modellazione} è un attività fondamentale nello sviluppo del software. Un \textbf{modello} è una semplificazione della realtà che descrive completamente un sistema da un particolare punto di vista. La modellazione è importante perchè può favorire i \textbf{ragionamenti} e la \textbf{comunicazione}. \textbf{UML (Unified Modeling Language)} è una notazione visuale standard per creare modelli. Lo scopo primario della modellazione è \textbf{comprendere}, il valore primario della modellazione è nella \textbf{discussione durante la modellazione}. \\\\
+Lo sviluppo di software OO può essere basato sull'applicazione di opportuni principi e pattern: \textbf{progettazione guidata dalle responsabilità} una responsabilità è un impegno a eseguire un compito o di conoscere un'informazione. Mediante l'\textbf{applicazione} di \textbf{pattern}: un pattern è una soluzione esemplare a un problema di progettazione ricorrente. Viene presentata anche l'attività preliminare dell'\textbf{analisi dei requisiti: casi d'uso} e \textbf{storie utente}. Viene anche studiata l'attività correlata di \textbf{trasformazione dei progetti in codice}. \textbf{Sviluppo iterativo e modellazione agile} è utile descrivere le attività di analisi e progettazione nel contesto di un \textbf{processo per lo sviluppo del software}: facciamo riferimento a processi di sviluppo \textbf{iterativi} e \textbf{agili} - \textbf{Unified Process (UP)} e \textbf{Scrum}. L'\textbf{analisi} enfatizza un'\textbf{investigazione} di un problema e dei suoi requisiti (che cosa). La \textbf{progettazione} enfatizza una \textbf{soluzione concettuale} che soddisfa i requisiti del problema (come). \textbf{L'analisi orientata agli oggetti (OOA)} si basa principalmente sull'identificazione dei concetti nel dominio del problema. \textbf{La progettazione orientata agli oggetti (OOD)} si basa principalmente sulla specifica di una comunità  di oggetti software che collaborano per soddisfare i requisiti. Le classi scelte durante l'OOD vengono implementate durante la \textbf{programmazione orientata agli oggetti (OOP)}. Un \textbf{caso d'uso} descrive una modalità di uso del sistema. Un \textbf{modello di dominio} rappresenta i concetti, le associazioni e gli attributi significativi del dominio di interesse. Un \textbf{diagramma di interazione} mostra le collaborazioni tra alcuni oggetti software. Un \textbf{diagramma delle classi di progetto} è una descrizione statica della struttura delle classi software, con i loro attributi e metodi. Due punti di vista per l'applicazione di UML, punto di vista \textbf{concettuale}: i diagrammi descrivono oggetti del mondo reale o in un dominio di interesse, punto di vista \textbf{software}: i diagrammi descrivono astrazioni o componenti software.
+\section{Sviluppo iterativo ed evolutivo (capitolo 2)}
+Un \textbf{processo per lo sviluppo del software} o \textbf{processo software} definisce un approccio disciplinato per la costruzione, il rilascio e la manutenzione del software. I processi si differenziano soprattutto nel "quando": nell'ordine delle attività, nei criteri di transizione da un'attività alla successiva.\\\\
+\textbf{Unified Process (UP)} è un processo \textbf{iterativo} per lo sviluppo di software OO. L'OOA/D si applica al meglio nei processi \textbf{iterativi} e \textbf{agili}, UP è aperto e flessibile. Il \textbf{processo a cascata} è un processo software "classico" in cui le attività vengono svolte in maniera sequenziale. Il processo a cascata è spesso poco efficace, elevata percentuale di fallimenti, bassa produttività, percentuali di difetti alte. La mancata gestione del cambiamento è una causa comune del fallimento dei progetti software. \\\\
+L'idea fondamentale dello \textbf{sviluppo evolutivo} è realizzare un'implementazione iniziale del sistema, esporla agli utenti per ottenere un feedback e poi raffinarla attraverso diverse versioni. Nello \textbf{sviluppo iterativo} lo sviluppo del software è organizzato in una serie di mini-progetti brevi, di durata fissa chiamati \textbf{iterazioni}. Il risultato di ciascuna iterazione è un sistema software eseguibile, integrato e testato, anche se parziale. Il sistema cresce in modo \textbf{incrementale} e viene adattato ai requisiti, in modo \textbf{evolutivo}. Lo sviluppo iterativo accetta e "abbraccia" il cambiamento e l'adattamento, scegliendoli come guide essenziali. I cambiamenti più significativi dovrebbero essere sollecitati soprattutto nelle iterazioni iniziali. Ovviamente i feedback sono provenienti da diverse fonti: attività di sviluppo, test, sviluppatori ecc... Tra i vantaggi troviamo, la minor probabilità di fallimento del progetto, miglior produttività riduzione precoce anzichè tardiva dei rischi maggiori ecc... \textbf{Timeboxing} ogni iterazione deve avere una durata prefissata. Le iterazioni sono \textbf{timeboxed}, la durata di un'iterazione non può cambiare. La struttura del software deve essere \textbf{flessibile}, in modo tale che l'impatto dei cambiamenti sul sistema sia basso, il codice deve essere facilmente \textbf{modificabile} e facilmente \textbf{comprensibile}. La \textbf{pianificazione iterativa} una pratica fondamentale dello sviluppo iterativo. La pianificazione iterativa \textbf{guidata dal rischio} e \textbf{guidata dal cliente}. Il \textbf{backlog} ("lavoro arretrato") uno strumento per l'organizzazione del lavoro che deve essere ancora svolto nello sviluppo iterativo. Costituito da un elenco di voci, requisiti da implementare e problemi da risolvere. A ciascuna voce viene assegnata una priorità. Durante un'interazione, i requisiti su cui operare vengono prefissati e bloccati. Sono quattro le \textbf{fasi} principali nell'organizzazione di un progetto UP: \textbf{ideazione}, \textbf{elaborazione}, \textbf{costruzione} e \textbf{transizione}. Indichiamo con \textbf{discipline} le attività e gli elaborati relativi a una determinata area, \textbf{elaborato (artifact)} termine generico che indica un prodotto di lavoro.
+\clearpage
+\end{document}
